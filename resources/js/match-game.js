@@ -10,7 +10,20 @@ var MatchGame = {};
  */
 
 MatchGame.generateCardValues = function () {
+  var cardValues = [];
+  var randomCardArray = [];
 
+  for (var i = 1; i <= 8; i++) {
+    cardValues.push(i);
+    cardValues.push(i);
+  }
+
+  while (cardValues.length > 0) {
+    var i = Math.floor(Math.random() * cardValues.length);
+    randomCardArray.push(cardValues[i]);
+    cardValues.splice(i, 1);
+  }
+  return randomCardArray;
 };
 
 /*
